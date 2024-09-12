@@ -1,10 +1,13 @@
-import { Counter } from "./components/counter";
+import { Router } from "./components/router/router";
+import { BrowserRouter } from "react-router-dom";
 import "./index.scss";
 
 export const App = () => {
   return (
     <div>
-      <Counter />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </div>
   );
 };
