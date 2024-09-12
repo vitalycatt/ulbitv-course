@@ -1,13 +1,15 @@
 import { Router } from "./components/router/router";
-import { BrowserRouter } from "react-router-dom";
-import "./index.scss";
+import { useTheme } from "./theme/useTheme";
+import "./styles/index.scss";
 
 export const App = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-    <div>
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+    <div className={`app ${theme}`}>
+      <button onClick={toggleTheme}>Toggle theme</button>
+
+      <Router />
     </div>
   );
 };
